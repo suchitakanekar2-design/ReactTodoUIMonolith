@@ -1,0 +1,28 @@
+name: ReactTodo workflow
+
+on:
+  push:
+    branches:
+    - main
+    - feartures/**
+
+jobs:
+  demo:
+    name: demo job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6.0.2
+      
+    - name: setup node.js
+      run: |
+        curl -s https://deb.nodesource.com/setup_16.x | sudo bash
+        sudo apt install nodejs -y
+      
+    - name: install dependancy
+      run: npm install
+    
+    - name: npm run build
+      run: npm run build    
+   
+  
