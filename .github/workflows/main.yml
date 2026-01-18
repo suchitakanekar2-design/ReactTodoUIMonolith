@@ -29,5 +29,12 @@ jobs:
       uses: actions/upload-artifact@v6.0.0  
       with:
         name: build-${{GITHUB.RUN_ID}}
-        path: Build
+        path: build
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v7.0.0
+      with:
+        name: build-${{ github.repository }}
+        path: build
+        
+      
   
