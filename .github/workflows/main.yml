@@ -33,7 +33,7 @@ jobs:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v7.0.0
       with:
-        name: build-${{ github.repository }}
+        name: build-${{github.repository}}
         path: build
         
       
